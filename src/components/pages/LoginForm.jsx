@@ -15,7 +15,7 @@ const LoginForm = () => {
   };
 
   const handleSignClick = () => {
-    navigate("/register");
+    navigate("register");
   };
 
   return (

@@ -1,5 +1,6 @@
 // src/components/pages/RegisterPage.jsx
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
 const RegisterPage = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +9,7 @@ const RegisterPage = () => {
     password: '',
     confirmPassword: '',
   });
+    const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -21,6 +23,9 @@ const RegisterPage = () => {
     e.preventDefault();
     console.log('Registering:', formData);
   };
+  const handleBack = () => {
+   navigate("/"); // Navigate back to home or previous page
+  }
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 p-4">
@@ -82,6 +87,13 @@ const RegisterPage = () => {
             Clear
           </button>
         </div>
+        <button
+            type="button"
+            onClick={handleBack}
+            className="flex-1 bg-gray-300 text-gray-800 py-2 rounded-md hover:bg-gray-400"
+          >
+            Back
+          </button>
       </form>
     </div>
   );

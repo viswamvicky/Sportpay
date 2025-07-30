@@ -9,6 +9,7 @@ function Routers() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/register" element={<RegisterPage />} />
+      
     </Routes>
   );
 }
