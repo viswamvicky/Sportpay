@@ -1,0 +1,35 @@
+/* src/components/layout/styles.css */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 0 auto;
+}
+
+input {
+  margin-bottom: 10px;
+  padding: 8px;
+  font-size: 14px;
+}
+
+button {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+p {
+  text-align: center;
+}
+
+span {
+  color: blue;
+  cursor: pointer;
+}
