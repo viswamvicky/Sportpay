@@ -1,6 +1,6 @@
-// src/components/layout/Layout.jsx
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, useLocation } from 'react-router-dom'
+// import { useLocation } from 'react-router-dom';
 import Routers from '../routers/Routers';  // Your routing component
 
 // ScrollToTop component
@@ -14,11 +14,12 @@ function ScrollToTop() {
 
 function Layout() {
   return (
+    <Router>
     <div style={{ width: '100vw', maxWidth: '100vw', overflowX: 'hidden', position: 'relative' }}>
       <ScrollToTop />
-      {/* Routers will handle page navigation */}
       <Routers />
     </div>
+  </Router>
   );
 }
 

@@ -1,18 +1,37 @@
 // src/components/pages/LoginForm.jsx
+import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import loginImage from "../../assets/sport.png"; // make sure image exists
 import "./LoginForm.css"; // Import the CSS file
 
 const LoginForm = () => {
-  const [mobile, setMobile] = useState("");
+  const [emailId, setEmailId] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Login with:", { mobile, password });
+    console.log("Login with:", { emailId, password });
   };
+
+  const handleSignIn = async (e) => {
+    try {
+
+      e.preventDefault();
+      const res = await axios.post(
+        "http://localhost:7777/login",
+        { emailID:emailId , password },
+        { withCredentials: true }
+      );
+      console.log("Login successful:", res.data);
+      // dispatch(addUser(res.data.data));
+      return navigate("/dashboard");
+    } catch (error) {
+      console.error("Login failed:", error);
+      
+    }
+  }
 
   const handleSignClick = () => {
     navigate("register");
@@ -28,12 +47,12 @@ const LoginForm = () => {
 
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <label>Mobile</label>
+              <label>Email ID</label>
               <input
                 type="text"
-                value={mobile}
-                onChange={(e) => setMobile(e.target.value)}
-                placeholder="Enter your mobile number"
+                value={emailId}
+                onChange={(e) => setEmailId(e.target.value)}
+                placeholder="Enter your Email ID"
                 required
               />
             </div>
@@ -48,7 +67,7 @@ const LoginForm = () => {
               />
             </div>
 
-            <button type="submit" className="login-button">Login</button>
+            <button type="submit" onClick={handleSignIn} className="login-button">Login</button>
           </form>
 
           <div className="signup-text">
