@@ -1,0 +1,76 @@
+/* Navbar styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f9fafb; /* Light background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Left Section: Hamburger Icon */
+.navbar-left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.navbar-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  color: #333; /* Set the color of the hamburger icon */
+}
+
+/* Center Section: Brand Name */
+.navbar-center {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333; /* Dark text color */
+  text-decoration: none;
+}
+
+/* Right Section: Notification Icon */
+.navbar-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  color: #333; /* Icon color */
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-center {
+    margin-top: 1rem;
+  }
+}

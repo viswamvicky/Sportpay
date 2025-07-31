@@ -2,6 +2,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./RegisterPage.css"; // Import the CSS file
 
 const RegisterPage = () => {
   const [formData, setFormData] = useState({
@@ -55,85 +56,83 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 p-4">
-      <form
-        onSubmit={handleSubmit}
-        className="bg-white rounded-lg shadow-lg w-full max-w-lg p-8 space-y-6"
-      >
-        <h2 className="text-2xl font-semibold text-center text-gray-800">
-          Register
-        </h2>
-       <input
-          type="text"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          placeholder="Email ID"
-          className="w-full px-4 py-2 border rounded-md"
-          required
-        />
-        <input
-          type="text"
-          name="mobile"
-          value={formData.mobile}
-          onChange={handleChange}
-          placeholder="Mobile Number"
-          className="w-full px-4 py-2 border rounded-md"
-          required
-        />
-        <input
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          placeholder="Full Name"
-          className="w-full px-4 py-2 border rounded-md"
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          value={formData.password}
-          onChange={handleChange}
-          placeholder="Password"
-          className="w-full px-4 py-2 border rounded-md"
-          required
-        />
-        <input
-          type="password"
-          name="confirmPassword"
-          value={formData.confirmPassword}
-          onChange={handleChange}
-          placeholder="Confirm Password"
-          className="w-full px-4 py-2 border rounded-md"
-          required
-        />
+  <div className="form-container">
+  <form onSubmit={handleSubmit} className="form">
+    <h2 className="form-title">Register</h2>
 
-        <div className="flex space-x-4">
-          <button
-            type="Sign Up"
-            onClick={handleSignup}
-            className="flex-1 bg-green-600 text-white py-2 rounded-md hover:bg-green-700"
-          >
-            Create
-          </button>
-          <button
-            type="button"
-            onClick={handleClear}
-            className="flex-1 bg-gray-300 text-gray-800 py-2 rounded-md hover:bg-gray-400"
-          >
-            Clear
-          </button>
-        </div>
-        <button
-          type="button"
-          onClick={handleBack}
-          className="flex-1 bg-gray-300 text-gray-800 py-2 rounded-md hover:bg-gray-400"
-        >
-          Back
-        </button>
-      </form>
+    <input
+      type="text"
+      name="email"
+      value={formData.email}
+      onChange={handleChange}
+      placeholder="Email ID"
+      className="form-input"
+      required
+    />
+    <input
+      type="text"
+      name="mobile"
+      value={formData.mobile}
+      onChange={handleChange}
+      placeholder="Mobile Number"
+      className="form-input"
+      required
+    />
+    <input
+      type="text"
+      name="name"
+      value={formData.name}
+      onChange={handleChange}
+      placeholder="Full Name"
+      className="form-input"
+      required
+    />
+    <input
+      type="password"
+      name="password"
+      value={formData.password}
+      onChange={handleChange}
+      placeholder="Password"
+      className="form-input"
+      required
+    />
+    <input
+      type="password"
+      name="confirmPassword"
+      value={formData.confirmPassword}
+      onChange={handleChange}
+      placeholder="Confirm Password"
+      className="form-input"
+      required
+    />
+
+    <div className="form-buttons">
+      <button
+        type="submit"
+        onClick={handleSignup}
+        className="btn btn-green"
+      >
+        Create
+      </button>
+      <button
+        type="button"
+        onClick={handleClear}
+        className="btn btn-gray"
+      >
+        Clear
+      </button>
     </div>
+
+    <button
+      type="button"
+      onClick={handleBack}
+      className="btn btn-gray full-width"
+    >
+      Back
+    </button>
+  </form>
+</div>
+
   );
 };
 

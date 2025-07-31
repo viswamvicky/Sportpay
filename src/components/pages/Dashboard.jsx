@@ -1,17 +1,29 @@
-
+  import './Dashboard.css'; // Assuming you have a CSS file for styling
 const Dashboard = () => {
-//   const [userData, setUserData] = useState(null);
+
   return (
-  
-        <div className="card card-border bg-base-100 w-96">
-  <div className="card-body">
-    <h2 className="card-title">Card Title</h2>
-    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-    <div className="card-actions justify-end">
-      <button className="btn btn-primary">Buy Now</button>
+<div className="navbar">
+      <div className="navbar-left">
+        <button className="navbar-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="icon">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+      <div className="navbar-center">
+        <a className="navbar-brand">daisyUI</a>
+      </div>
+      <div className="navbar-right">
+        <button className="navbar-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="icon">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path>
+          </svg>
+        </button>
+      </div>
     </div>
-  </div>
-</div>
- ) }
+  );
+};
+// export default Navbar;
+
  export default Dashboard;  
 
